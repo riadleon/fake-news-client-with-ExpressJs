@@ -26,8 +26,8 @@ const Register = () => {
                 setError('');
                 form.reset();
                 handleUpdateUserProfile(name, photoURL);
-                // handleEmailVerification();
-                // toast.success('Please verify your email address.')
+                handleEmailVerification();
+                toast.success('Please verify your email address.')
             })
             .catch(e => {
                 console.error(e);
@@ -46,11 +46,11 @@ const Register = () => {
             .catch(error => console.error(error));
     }
 
-    // const handleEmailVerification = () => {
-    //     verifyEmail()
-    //         .then(() => { })
-    //         .catch(error => console.error(error));
-    // }
+    const handleEmailVerification = () => {
+        verifyEmail()
+            .then(() => { })
+            .catch(error => console.error(error));
+    }
 
     const handleAccepted = event => {
         setAccepted(event.target.checked)

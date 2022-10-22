@@ -27,20 +27,20 @@ const Login = () => {
                 form.reset();
                 setError('');
                 navigate(from, { replace: true });
-                // if (user.emailVerified) {
-                //     navigate(from, { replace: true });
-                // }
-                // else {
-                //     toast.error('Your email is not verified. Please verify your email address.')
-                // }
+                if (user.emailVerified) {
+                    navigate(from, { replace: true });
+                }
+                else {
+                    toast.error('Your email is not verified. Please verify your email address.')
+                }
             })
             .catch(error => {
                 console.error(error)
                 setError(error.message);
             })
-        // .finally(() => {
-        //     setLoading(false);
-        // })
+        .finally(() => {
+            setLoading(false);
+        })
     }
 
     return (
